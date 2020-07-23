@@ -9,7 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let placeholderAPI = API()
     var albums:[Album] = []
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        tableView.dataSource = self
+        placeholderAPI.getAlbums { [weak self] (result) in
+            switch result {
+            case .success(let albums):
+                DispatchQueue.main.async {
+                    self?.albums = albums
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -18,9 +35,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "6c570076-9d57-40f1-94d1-d6cd67ed23c6", for: indexPath)
-        cell.textLabel?.text = <#Album Title#>
-        cell.imageView?.image = <#Album Image#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "6c570076-9d57-40f1-94d1-d6cd67ed23c6", for: indexPath) as? ImageTitleTableViewCell else { fatalError() }
+        cell.titleLabel.text = albums[indexPath.row].titleWithNoE
+        cell.setAlbumImage(url: albums[indexPath.row].thumbnailUrl, with: placeholderAPI)
         return cell
     }
 }

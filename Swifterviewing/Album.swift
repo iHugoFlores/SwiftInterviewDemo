@@ -8,6 +8,9 @@
 
 import Foundation
 
-<#ClassOrStruct#> Album {
+struct Album: Decodable {
+    let title: String
+    let thumbnailUrl: String
     
+    lazy var titleWithNoE = self.title.replacingOccurrences(of: "e", with: "", options: .caseInsensitive)
 }
