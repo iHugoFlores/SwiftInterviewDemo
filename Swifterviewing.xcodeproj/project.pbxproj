@@ -87,17 +87,13 @@
 		CA7A916324B774F500419A0F /* Swifterviewing */ = {
 			isa = PBXGroup;
 			children = (
+				F078D59824CA2B8F00441935 /* Supporting Files */,
+				F078D59724CA2B7A00441935 /* Networking */,
+				F078D59624CA2B5F00441935 /* Controllers */,
+				F078D59524CA2B5700441935 /* Views */,
+				F078D59424CA2B4B00441935 /* Models */,
 				CA7A916424B774F500419A0F /* AppDelegate.swift */,
 				CA7A916624B774F500419A0F /* SceneDelegate.swift */,
-				CA7A916824B774F500419A0F /* ViewController.swift */,
-				CA7A916A24B774F500419A0F /* Main.storyboard */,
-				CA7A916D24B774F600419A0F /* Assets.xcassets */,
-				CA7A916F24B774F600419A0F /* LaunchScreen.storyboard */,
-				CA7A917224B774F600419A0F /* Info.plist */,
-				CA7A918624B776FB00419A0F /* API.swift */,
-				CA7A918824B7D67E00419A0F /* Album.swift */,
-				F00E2EFE24C9C55700405CD5 /* ImageTitleTableViewCell.swift */,
-				F00E2F0024CA040000405CD5 /* NetworkInterface.swift */,
 			);
 			path = Swifterviewing;
 			sourceTree = "<group>";
@@ -109,6 +105,58 @@
 				CA7A917D24B774F600419A0F /* Info.plist */,
 			);
 			path = SwifterviewingTests;
+			sourceTree = "<group>";
+		};
+		F078D59424CA2B4B00441935 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA7A918824B7D67E00419A0F /* Album.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F078D59524CA2B5700441935 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CA7A916F24B774F600419A0F /* LaunchScreen.storyboard */,
+				CA7A916A24B774F500419A0F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F078D59624CA2B5F00441935 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F078D59924CA2BD700441935 /* Cells */,
+				CA7A916824B774F500419A0F /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F078D59724CA2B7A00441935 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F00E2F0024CA040000405CD5 /* NetworkInterface.swift */,
+				CA7A918624B776FB00419A0F /* API.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F078D59824CA2B8F00441935 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA7A917224B774F600419A0F /* Info.plist */,
+				CA7A916D24B774F600419A0F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F078D59924CA2BD700441935 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F00E2EFE24C9C55700405CD5 /* ImageTitleTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KRX3M99K22;
-				INFOPLIST_FILE = Swifterviewing/Info.plist;
+				INFOPLIST_FILE = "Swifterviewing/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KRX3M99K22;
-				INFOPLIST_FILE = Swifterviewing/Info.plist;
+				INFOPLIST_FILE = "Swifterviewing/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
