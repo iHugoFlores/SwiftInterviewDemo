@@ -42,8 +42,8 @@ class ImageTitleTableViewCell: UITableViewCell {
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
-    func setAlbumImage(url: String, with api: API) {
-        api.getAlbumImage(url: url) { [weak self] result in
+    func setAlbumImage(url: String, with api: NetworkInterface) {
+        api.getData(url: url) { [weak self] (result) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

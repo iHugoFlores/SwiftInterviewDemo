@@ -17,6 +17,7 @@
 		CA7A918724B776FB00419A0F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A918624B776FB00419A0F /* API.swift */; };
 		CA7A918924B7D67E00419A0F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A918824B7D67E00419A0F /* Album.swift */; };
 		F00E2EFF24C9C55700405CD5 /* ImageTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E2EFE24C9C55700405CD5 /* ImageTitleTableViewCell.swift */; };
+		F00E2F0124CA040000405CD5 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E2F0024CA040000405CD5 /* NetworkInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		CA7A918624B776FB00419A0F /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		CA7A918824B7D67E00419A0F /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F00E2EFE24C9C55700405CD5 /* ImageTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleTableViewCell.swift; sourceTree = "<group>"; };
+		F00E2F0024CA040000405CD5 /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				CA7A918624B776FB00419A0F /* API.swift */,
 				CA7A918824B7D67E00419A0F /* Album.swift */,
 				F00E2EFE24C9C55700405CD5 /* ImageTitleTableViewCell.swift */,
+				F00E2F0024CA040000405CD5 /* NetworkInterface.swift */,
 			);
 			path = Swifterviewing;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				CA7A916924B774F500419A0F /* ViewController.swift in Sources */,
 				CA7A916524B774F500419A0F /* AppDelegate.swift in Sources */,
 				CA7A918724B776FB00419A0F /* API.swift in Sources */,
+				F00E2F0124CA040000405CD5 /* NetworkInterface.swift in Sources */,
 				CA7A916724B774F500419A0F /* SceneDelegate.swift in Sources */,
 				F00E2EFF24C9C55700405CD5 /* ImageTitleTableViewCell.swift in Sources */,
 				CA7A918924B7D67E00419A0F /* Album.swift in Sources */,

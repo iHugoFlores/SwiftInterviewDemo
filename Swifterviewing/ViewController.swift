@@ -9,13 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let placeholderAPI = API()
+    private let baseURL = "https://jsonplaceholder.typicode.com"
+    private let photosEndpoint = "/photos"
+
+    let placeholderAPI: NetworkInterface = API()
     var albums:[Album] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         tableView.dataSource = self
-        placeholderAPI.getAlbums { [weak self] (result) in
+        placeholderAPI.getDecodable(url: "\(baseURL)\(photosEndpoint)") { [weak self] (result: Result<[Album], NetworkError>) in
             switch result {
             case .success(let albums):
                 DispatchQueue.main.async {
