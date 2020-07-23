@@ -13,8 +13,8 @@ class ImageTitleTableViewCell: UITableViewCell {
     let albumImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.widthAnchor.constraint(equalToConstant: 56).isActive = true
-        image.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        image.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 80).isActive = true
         image.image = UIImage(systemName: "pencil")
         return image
     }()
@@ -24,22 +24,43 @@ class ImageTitleTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Inside cell?"
+        label.textColor = .black
         return label
     }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10))
+        let cardView = UIView()
+        cardView.layer.cornerRadius = 6.0
+        cardView.layer.masksToBounds = true
+        cardView.layer.shadowColor = UIColor.gray.cgColor
+        cardView.layer.masksToBounds = false
+        cardView.layer.shadowOffset = CGSize(width: 0.0 , height: 1.0)
+        cardView.layer.shadowOpacity = 0.4
+        cardView.layer.shadowRadius = 3.0
+        
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(cardView)
+        cardView.backgroundColor = .white
+        cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        cardView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
+        cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+        
+        //contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10))
         contentView.addSubview(albumImage)
-        contentView.addSubview(titleLabel)
+        cardView.addSubview(titleLabel)
 
-        contentView.heightAnchor.constraint(greaterThanOrEqualTo: albumImage.heightAnchor, multiplier: 1).isActive = true
-        albumImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        albumImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: albumImage.trailingAnchor, constant: 16).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        //cardView.heightAnchor.constraint(greaterThanOrEqualTo: albumImage.heightAnchor, multiplier: 1).isActive = true
+        //cardView.heightAnchor.constraint(greaterThanOrEqualTo: albumImage.heightAnchor, multiplier: 1, constant: 16).isActive = true
+        albumImage.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 8).isActive = true
+        albumImage.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
+        albumImage.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -8).isActive = true
+        //albumImage.centerYAnchor.constraint(equalTo: cardView.centerYAnchor).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: albumImage.trailingAnchor, constant: 8).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -8).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 8).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -8).isActive = true
     }
     
     func setAlbumImage(url: String, with api: NetworkInterface) {
